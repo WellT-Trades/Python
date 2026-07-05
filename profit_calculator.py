@@ -9,8 +9,18 @@ sl_price = 0.69431 #(SL means stop loss)
 lot_size = 0.83
 
 # Calculate Profit = (Exit Price − Entry Price) × Lot Size
-profit = (entry_price - TP_price) * lot_size
+
+# Conditional Operation
+if bias == "short":
+    profit = (entry_price - tp_price) * lot_size
+
+elif bias == "long":
+    profit = (tp_price - entry_price) * lot_size
+
+else:
+    print("Invalid bias.")
 
 # Output
-print(currency, bias)
-print("Profit:", Profit)
+print("Currency:", currency)
+print("Bias:", bias)
+print("Profit:", profit)
