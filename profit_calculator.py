@@ -23,4 +23,4 @@ else:
 # Output
 print("Currency:", currency)
 print("Bias:", bias)
-print("Profit:", profit)
+print(f"Profit: {profit:.5f}")
