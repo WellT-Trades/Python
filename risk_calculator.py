@@ -10,11 +10,17 @@
 # Risk Amount: 20
 
 account_size = 1000
-risk_percent = 2
+risk_percent = 5
 
 # Calculates the risk amount
 risk_amount = account_size * risk_percent / 100
 
-print("Account Size:", account_size)
-print("Risk Percent:", risk_percent)
-print("Risk Amount:",  risk_amount)
+if risk_percent > 2:
+    print("\nWarning: Risk exceeds your trading plan.")
+
+else:
+    print("\nRisk is within your trading plan.\n")
+
+print("Account Size:", account_size,  "\n")
+print("Risk Percent:", risk_percent, "\n")
+print("Risk Amount:",  risk_amount, "\n")
