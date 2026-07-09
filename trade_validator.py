@@ -1,12 +1,13 @@
 #Trade Validator
 
 #Variables
-currency = "AUDUSD"
-bias = "long"
-entry_price = 0.69371
-tp_price = 0.69112
-sl_price = 0.69431
-reward_ratio = 3
+
+currency = input("Currency: ").upper()
+bias = input("Bias (long/short): ").lower()
+entry_price = float(input("Entry Price: "))
+tp_price = float(input("TP Price: "))
+sl_price = float(input("SL Price: "))
+reward_ratio = float(input("RR: "))
 
 # #Bias Validity
 # if bias == "long":
@@ -35,3 +36,11 @@ if (
     print("Trade accepted.")
 else:
     print("Trade rejected.")
+
+print("\n===Trade Summary===")
+print("\nCurrency:", currency)
+print("Bias:", bias)
+print("Entry:", entry_price)
+print("TP:", tp_price)
+print("SL:", sl_price)
+print("RR:", reward_ratio)
