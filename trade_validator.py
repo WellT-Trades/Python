@@ -2,7 +2,7 @@
 
 #Variables
 currency = "AUDUSD"
-bias = "short"
+bias = "long"
 entry_price = 0.69371
 tp_price = 0.69112
 sl_price = 0.69431
@@ -27,7 +27,11 @@ reward_ratio = 3
 #     print("Trade rejected.\nReward-to-Risk ratio is below 2:1.")
 # else:
 #     print("Trade accepted.")
-if bias == "short" and tp_price < entry_price and reward_ratio >= 2:
+if (
+    (bias == "short" and tp_price < entry_price)
+    or
+    (bias == "long" and tp_price > entry_price)
+)and reward_ratio >= 2:
     print("Trade accepted.")
 else:
     print("Trade rejected.")
