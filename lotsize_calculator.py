@@ -21,14 +21,14 @@ elif pair_value <= 0:
 
 else:
     # CONVERSIONS
-     risk_amount = (risk_percentage / 100) * account_size
-
+    from risk_calculator import calculate_risk
+    risk_amount = calculate_risk(account_size, risk_percentage)
     # LOT SIZE FORMULA
-     lot_size = (risk_amount / sl_pips) / pair_value
+    lot_size = (risk_amount / sl_pips) / pair_value
      
-     print("\n=== SUMMARY===")
-     print("Currency:", currency)
-     print("SL:", sl_pips)
-     print("Risk (%):", risk_percentage)
-     print("Risk Amount:", risk_amount)
-     print(f"Lot size: {lot_size:.2f}")
+    print("\n=== SUMMARY===")
+    print(f"Currency:{currency}")
+    print(f"SL:{sl_pips}")
+    print(f"Risk (%):{risk_percentage}")
+    print(f"Risk Amount:{risk_amount}")
+    print(f"Lot size:{lot_size:.2f}")
