@@ -1,27 +1,27 @@
-# # Without looking anything up, write a Python program that:
-# Creates a variable called account_size and stores 1000.
-# Creates a variable called risk_percent and stores 2.
-# Calculates the risk amount using:
-# Risk Amount = Account Size × Risk Percent ÷ 100
-# Stores the result in a variable called risk_amount.
-# Prints:
+# RISK CALCULATOR AND VALIDATOR
 
-account_size = 1000
-risk_percent = 2
 
-# Calculates the risk amount
-def calculate_risk(account_size, risk_percent):
-    risk_amount = account_size * (risk_percent/100)
-    return risk_amount
-
-risk_amount = calculate_risk(account_size, risk_percent)
-
-# if risk_percent > 2:
-#     print("\nWarning: Risk exceeds your trading plan.")
-
-# else:
-#     print("\nRisk is within your trading plan.\n")
+# Calculates the risk percent
+def calculate_risk_percent(account_size, risk_amount):
+    risk_percent = (risk_amount * 100) / account_size
+    return risk_percent
 
 # print("Account Size:", account_size,  "\n")
 # print("Risk Percent:", risk_percent, "\n")
-print(f"Risk amount:{risk_amount}")
+if __name__ == "__main__":
+
+    account_size = float(input("Account Size: "))
+    if account_size < 10:
+       print("Go get funded Trader!")
+       exit()
+
+    else:
+        risk_amount = float(input("Risk amount: "))
+    
+    risk_percent = calculate_risk_percent(account_size, risk_amount)
+    if risk_percent > 2:
+        print("\nWarning: Risk exceeds trading plan.")
+    else:
+     print("\nRisk is within trading plan.\n")
+
+    print(f"Risk (%): {risk_percent:.2f}%")
