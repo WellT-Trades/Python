@@ -2,6 +2,7 @@
 
 # IMPORTS
 from risk_calculator import calculate_risk_percent
+from dictionary import pair_values
 # FUNCTIONS
 def calculate_lot_size(risk_amount, sl_pips, pair_value):
     lot_size = (risk_amount / sl_pips) / pair_value
@@ -18,24 +19,20 @@ if __name__ == "__main__":
     currency = input("Currency: ").upper()
     risk_amount = float(input("Risk Amount: "))
     sl_pips = float(input("SL Pips: "))
-    pair_value = float(input("Pair Value: "))
+    pair_value = pair_values[currency]
 
     # CONDITIONS
     while account_size <= 9:
         print("\nError!: Trader must have capital.")
-        account_size = float(input("Account Size: "))
+        account_size = int(input("Account Size: "))
 
     while risk_amount <= 0:
         print("\nError!: Risk must be greater than zero.")
-        risk_amount = float(input("Risk Amount: "))
+        risk_amount = int(input("Risk Amount: "))
 
     while sl_pips <= 1:
         print("\nError!: SL must be greater than one.")
         sl_pips = float(input("SL Pips: "))
-
-    while pair_value <= 0:
-        print("\nError!: Pair value must be greater than zero")
-        pair_value = float(input("Pair Value: "))
 
     else:
         # CONVERSIONS
@@ -46,6 +43,7 @@ if __name__ == "__main__":
             ))
         
         # LOT SIZE FORMULA
+        
         lot_size = calculate_lot_size(
             risk_amount,
             sl_pips,
@@ -60,6 +58,5 @@ if __name__ == "__main__":
             risk_amount,
             lot_size
         )
-        
-print(summary)
+        print(summary)
         
