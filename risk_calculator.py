@@ -24,4 +24,4 @@ if __name__ == "__main__":
     else:
      print("\nRisk is within trading plan.\n")
 
-    print(f"Risk (%): {risk_percent:.2f}%")
+    print(f"Risk (%): {risk_percent:.0f}%")
