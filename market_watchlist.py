@@ -5,8 +5,14 @@ watchlist = [
     "GBPUSD",
 
     "USDJPY",
+
+    "XAUUSD",
+
+    "AUDUSD"
 ]
-for pair in range(watchlist):
+print(f"{'=' * 20}\n{" " * 2}TRADE WATCHLIST\n{'=' * 20}")
+
+for pair in range(len(watchlist)):
     print(
-        f"{'=' * 10}\nWATCHLIST\n{'=' * 10}\n\nlen(watchlist[])"
+        f"{pair + 1}. {watchlist[pair]}"
     )
